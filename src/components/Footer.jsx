@@ -1,7 +1,7 @@
 import React from 'react';
 import { personalInfo } from '../data/portfolioData';
-import { LinkedInIcon } from './BrandIcons';
-import { ArrowUp, Code } from 'lucide-react';
+import { LinkedInIcon, GitHubIcon } from './BrandIcons';
+import { ArrowUp, Code, Mail, Phone } from 'lucide-react';
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -22,9 +22,9 @@ export default function Footer() {
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <div
               style={{
-                width: '28px',
-                height: '28px',
-                borderRadius: '5px',
+                width: '30px',
+                height: '30px',
+                borderRadius: '6px',
                 backgroundColor: 'var(--primary-accent)',
                 display: 'flex',
                 alignItems: 'center',
@@ -37,16 +37,40 @@ export default function Footer() {
             <span style={{ fontWeight: 700, fontSize: '1.05rem' }}>{personalInfo.name}</span>
           </div>
 
-          <div style={{ display: 'flex', gap: '1.25rem' }}>
+          <div style={{ display: 'flex', gap: '1.25rem', flexWrap: 'wrap' }}>
             <a href="#about" style={{ color: 'var(--text-secondary)', textDecoration: 'none', fontSize: '0.88rem' }}>About</a>
             <a href="#skills" style={{ color: 'var(--text-secondary)', textDecoration: 'none', fontSize: '0.88rem' }}>Skills</a>
             <a href="#experience" style={{ color: 'var(--text-secondary)', textDecoration: 'none', fontSize: '0.88rem' }}>Experience</a>
             <a href="#projects" style={{ color: 'var(--text-secondary)', textDecoration: 'none', fontSize: '0.88rem' }}>Projects</a>
             <a href="#patent" style={{ color: 'var(--text-secondary)', textDecoration: 'none', fontSize: '0.88rem' }}>Patent</a>
+            <a href="#education" style={{ color: 'var(--text-secondary)', textDecoration: 'none', fontSize: '0.88rem' }}>Education</a>
             <a href="#contact" style={{ color: 'var(--text-secondary)', textDecoration: 'none', fontSize: '0.88rem' }}>Contact</a>
           </div>
 
-          <div style={{ display: 'flex', gap: '0.6rem', alignItems: 'center' }}>
+          <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
+            <a
+              href={`mailto:${personalInfo.email}`}
+              style={{ color: 'var(--text-secondary)', padding: '0.35rem' }}
+              title="Send Email"
+            >
+              <Mail size={18} />
+            </a>
+            <a
+              href={`tel:${personalInfo.phone.replace(/[^0-9+]/g, '')}`}
+              style={{ color: 'var(--text-secondary)', padding: '0.35rem' }}
+              title="Call"
+            >
+              <Phone size={18} />
+            </a>
+            <a
+              href={personalInfo.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: 'var(--text-secondary)', padding: '0.35rem' }}
+              title="GitHub Profile"
+            >
+              <GitHubIcon size={18} />
+            </a>
             <a
               href={personalInfo.linkedin}
               target="_blank"
@@ -69,7 +93,7 @@ export default function Footer() {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                marginLeft: '0.5rem',
+                marginLeft: '0.25rem',
               }}
             >
               <ArrowUp size={16} />
@@ -78,8 +102,8 @@ export default function Footer() {
 
         </div>
 
-        <div style={{ textAlign: 'center', paddingTop: '1.25rem', borderTop: '1px solid var(--border-color)', color: 'var(--text-muted)', fontSize: '0.82rem' }}>
-          © {new Date().getFullYear()} Parul Nakhate • Built with basic React JS (`useState`, `useEffect`).
+        <div style={{ textAlign: 'center', paddingTop: '1.25rem', borderTop: '1px solid var(--border-color)', color: 'var(--text-muted)', fontSize: '0.84rem' }}>
+          © {new Date().getFullYear()} Parul Nakhate • AI & Machine Learning Engineer | Salesforce Developer • Nagpur, India
         </div>
       </div>
     </footer>

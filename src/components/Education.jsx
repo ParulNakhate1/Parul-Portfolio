@@ -68,13 +68,13 @@ export default function Education() {
               <div style={{ backgroundColor: 'var(--bg-primary)', padding: '1rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-color)' }}>
                 <h4 style={{ fontSize: '0.9rem', marginBottom: '0.3rem', color: 'var(--primary-accent)' }}>Key Coursework</h4>
                 <p style={{ fontSize: '0.84rem', color: 'var(--text-secondary)' }}>
-                  Java (DSA), Machine Learning, Deep Learning, OpenCV, Speech Processing, SQL, NLP, Software Engineering.
+                  Java (DSA), Python, Apex, Machine Learning, Deep Learning, OpenCV, Speech Processing, SQL, NLP, Cloud Computing.
                 </p>
               </div>
               <div style={{ backgroundColor: 'var(--bg-primary)', padding: '1rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-color)' }}>
                 <h4 style={{ fontSize: '0.9rem', marginBottom: '0.3rem', color: 'var(--secondary-accent)' }}>Domain Focus</h4>
                 <p style={{ fontSize: '0.84rem', color: 'var(--text-secondary)' }}>
-                  Artificial Intelligence & Machine Learning (AIML), Computer Vision, Voice Biometrics & Smart Infrastructure.
+                  Artificial Intelligence & Machine Learning (AIML), Salesforce Enterprise Cloud Architecture, Voice Biometrics & Computer Vision.
                 </p>
               </div>
             </div>

@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import { skillsData } from '../data/portfolioData';
-import { Code2, Layers, Cpu, Wrench } from 'lucide-react';
+import { Code2, Layers, Cpu, Wrench, Cloud, Sparkles } from 'lucide-react';
 
 export default function Skills() {
-  // Chai aur React pattern: useState for tab filter
   const [activeTab, setActiveTab] = useState('all');
 
   const tabs = [
     { id: 'all', label: 'All Skills' },
+    { id: 'salesforce', label: 'Salesforce' },
     { id: 'languages', label: 'Languages' },
     { id: 'webTech', label: 'Web Tech' },
     { id: 'libraries', label: 'Libraries & Frameworks' },
     { id: 'domains', label: 'Domains' },
-    { id: 'tools', label: 'Tools' },
+    { id: 'tools', label: 'Tools & Platforms' },
   ];
 
   return (
@@ -28,7 +28,7 @@ export default function Skills() {
             My <span className="highlight-text">Skill Set</span>
           </h2>
           <p className="section-subtitle">
-            Technologies and tools I have worked with during my B.Tech studies and internships.
+            Comprehensive technical proficiency across Salesforce enterprise development, AI/ML models, full-stack technologies, and cloud tools.
           </p>
         </div>
 
@@ -66,17 +66,55 @@ export default function Skills() {
         {/* Tab Content */}
         <div>
           
+          {/* Salesforce */}
+          {(activeTab === 'all' || activeTab === 'salesforce') && (
+            <div style={{ marginBottom: '2.5rem' }}>
+              <h3 style={{ fontSize: '1.25rem', marginBottom: '1.25rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <Cloud size={20} color="var(--primary-accent)" />
+                <span>Salesforce Development & Architecture</span>
+                <span
+                  style={{
+                    fontSize: '0.75rem',
+                    backgroundColor: 'var(--badge-bg)',
+                    color: 'var(--badge-text)',
+                    padding: '0.15rem 0.55rem',
+                    borderRadius: 'var(--radius-full)',
+                    fontWeight: 600,
+                    marginLeft: '0.35rem'
+                  }}
+                >
+                  Enterprise
+                </span>
+              </h3>
+              <div className="grid-2">
+                {skillsData.salesforce.map((item, idx) => (
+                  <div key={idx} className="card" style={{ padding: '1.25rem' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.35rem' }}>
+                      <Sparkles size={16} color="var(--primary-accent)" />
+                      <div style={{ fontWeight: 600, fontSize: '1rem', color: 'var(--text-primary)' }}>
+                        {item.name}
+                      </div>
+                    </div>
+                    <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem', lineHeight: 1.5 }}>
+                      {item.desc}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* Programming Languages */}
           {(activeTab === 'all' || activeTab === 'languages') && (
-            <div style={{ marginBottom: '2rem' }}>
-              <h3 style={{ fontSize: '1.15rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                <Code2 size={18} color="var(--primary-accent)" />
+            <div style={{ marginBottom: '2.5rem' }}>
+              <h3 style={{ fontSize: '1.25rem', marginBottom: '1.25rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <Code2 size={20} color="var(--primary-accent)" />
                 <span>Programming Languages</span>
               </h3>
               <div className="grid-4">
                 {skillsData.languages.map((item, idx) => (
                   <div key={idx} className="card" style={{ padding: '1rem 1.25rem' }}>
-                    <div style={{ fontWeight: 600, fontSize: '0.98rem', marginBottom: '0.4rem' }}>{item.name}</div>
+                    <div style={{ fontWeight: 600, fontSize: '1rem', marginBottom: '0.35rem' }}>{item.name}</div>
                     <div style={{ fontSize: '0.82rem', color: 'var(--text-secondary)' }}>Proficiency: {item.level}%</div>
                   </div>
                 ))}
@@ -86,15 +124,15 @@ export default function Skills() {
 
           {/* Web Tech */}
           {(activeTab === 'all' || activeTab === 'webTech') && (
-            <div style={{ marginBottom: '2rem' }}>
-              <h3 style={{ fontSize: '1.15rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                <Layers size={18} color="var(--secondary-accent)" />
+            <div style={{ marginBottom: '2.5rem' }}>
+              <h3 style={{ fontSize: '1.25rem', marginBottom: '1.25rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <Layers size={20} color="var(--secondary-accent)" />
                 <span>Web Technologies</span>
               </h3>
               <div className="grid-3">
                 {skillsData.webTech.map((item, idx) => (
                   <div key={idx} className="card" style={{ padding: '1rem 1.25rem' }}>
-                    <div style={{ fontWeight: 600, fontSize: '0.98rem', marginBottom: '0.4rem' }}>{item.name}</div>
+                    <div style={{ fontWeight: 600, fontSize: '1rem', marginBottom: '0.35rem' }}>{item.name}</div>
                     <div style={{ fontSize: '0.82rem', color: 'var(--text-secondary)' }}>Proficiency: {item.level}%</div>
                   </div>
                 ))}
@@ -104,15 +142,16 @@ export default function Skills() {
 
           {/* Libraries & Frameworks */}
           {(activeTab === 'all' || activeTab === 'libraries') && (
-            <div style={{ marginBottom: '2rem' }}>
-              <h3 style={{ fontSize: '1.15rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                <Cpu size={18} color="var(--primary-accent)" />
+            <div style={{ marginBottom: '2.5rem' }}>
+              <h3 style={{ fontSize: '1.25rem', marginBottom: '1.25rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <Cpu size={20} color="var(--primary-accent)" />
                 <span>Libraries & AI Frameworks</span>
               </h3>
-              <div className="grid-4">
+              <div className="grid-3">
                 {skillsData.librariesAndFrameworks.map((item, idx) => (
-                  <div key={idx} className="card" style={{ padding: '1rem 1.25rem', textAlign: 'center' }}>
-                    <div style={{ fontWeight: 600, fontSize: '0.95rem' }}>{item.name}</div>
+                  <div key={idx} className="card" style={{ padding: '1rem 1.25rem' }}>
+                    <div style={{ fontWeight: 600, fontSize: '0.98rem', marginBottom: '0.25rem' }}>{item.name}</div>
+                    <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>{item.category}</div>
                   </div>
                 ))}
               </div>
@@ -121,16 +160,16 @@ export default function Skills() {
 
           {/* Domains */}
           {(activeTab === 'all' || activeTab === 'domains') && (
-            <div style={{ marginBottom: '2rem' }}>
-              <h3 style={{ fontSize: '1.15rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                <Layers size={18} color="var(--secondary-accent)" />
-                <span>Core Domains</span>
+            <div style={{ marginBottom: '2.5rem' }}>
+              <h3 style={{ fontSize: '1.25rem', marginBottom: '1.25rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <Layers size={20} color="var(--secondary-accent)" />
+                <span>Core Domains & Competencies</span>
               </h3>
               <div className="grid-2">
                 {skillsData.domains.map((item, idx) => (
                   <div key={idx} className="card" style={{ padding: '1.25rem' }}>
                     <h4 style={{ fontSize: '1.05rem', color: 'var(--primary-accent)', marginBottom: '0.35rem' }}>{item.title}</h4>
-                    <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>{item.desc}</p>
+                    <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.5 }}>{item.desc}</p>
                   </div>
                 ))}
               </div>
@@ -140,25 +179,28 @@ export default function Skills() {
           {/* Tools */}
           {(activeTab === 'all' || activeTab === 'tools') && (
             <div style={{ marginBottom: '1rem' }}>
-              <h3 style={{ fontSize: '1.15rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                <Wrench size={18} color="var(--primary-accent)" />
+              <h3 style={{ fontSize: '1.25rem', marginBottom: '1.25rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <Wrench size={20} color="var(--primary-accent)" />
                 <span>Tools & Platforms</span>
               </h3>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.6rem' }}>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.65rem' }}>
                 {skillsData.tools.map((tool, idx) => (
                   <span
                     key={idx}
                     style={{
-                      padding: '0.4rem 1rem',
+                      padding: '0.5rem 1.1rem',
                       borderRadius: 'var(--radius-full)',
                       backgroundColor: 'var(--bg-primary)',
                       border: '1px solid var(--border-color)',
                       fontSize: '0.88rem',
                       fontWeight: 500,
                       color: 'var(--text-primary)',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.4rem'
                     }}
                   >
-                    🔹 {tool}
+                    <span>⚡</span> {tool}
                   </span>
                 ))}
               </div>

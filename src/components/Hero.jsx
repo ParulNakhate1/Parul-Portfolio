@@ -1,29 +1,29 @@
 import React from 'react';
 import { personalInfo } from '../data/portfolioData';
 import { LinkedInIcon } from './BrandIcons';
-import { Mail, MapPin, ArrowRight, Sparkles } from 'lucide-react';
+import { Mail, MapPin, ArrowRight, Sparkles, Phone, Cloud } from 'lucide-react';
 
 export default function Hero() {
   return (
     <section
       id="hero"
       style={{
-        paddingTop: '4rem',
-        paddingBottom: '4rem',
+        paddingTop: '4.5rem',
+        paddingBottom: '4.5rem',
         backgroundColor: 'var(--bg-secondary)',
         borderBottom: '1px solid var(--border-color)',
       }}
     >
       <div className="container">
-        <div style={{ maxWidth: '850px', margin: '0 auto', textAlign: 'center' }}>
+        <div style={{ maxWidth: '880px', margin: '0 auto', textAlign: 'center' }}>
           
           {/* Badge */}
           <div
             style={{
               display: 'inline-flex',
               alignItems: 'center',
-              gap: '0.4rem',
-              padding: '0.3rem 0.9rem',
+              gap: '0.45rem',
+              padding: '0.35rem 1rem',
               backgroundColor: 'var(--badge-bg)',
               color: 'var(--badge-text)',
               borderRadius: 'var(--radius-full)',
@@ -33,14 +33,14 @@ export default function Hero() {
             }}
           >
             <Sparkles size={15} />
-            <span>AI & ML Engineer • B.Tech CSE (AIML) Class of 2026</span>
+            <span>AI & ML Engineer • Salesforce Developer • B.Tech CSE (AIML) 2026</span>
           </div>
 
           <h1
             style={{
               fontSize: 'clamp(2.2rem, 4.5vw, 3.4rem)',
               lineHeight: 1.2,
-              marginBottom: '1rem',
+              marginBottom: '1.1rem',
               fontWeight: 700,
             }}
           >
@@ -49,14 +49,14 @@ export default function Hero() {
 
           <p
             style={{
-              fontSize: 'clamp(1.05rem, 1.8vw, 1.2rem)',
+              fontSize: 'clamp(1.02rem, 1.8vw, 1.18rem)',
               color: 'var(--text-secondary)',
-              maxWidth: '720px',
+              maxWidth: '760px',
               margin: '0 auto 1.75rem auto',
-              lineHeight: 1.6,
+              lineHeight: 1.65,
             }}
           >
-            Passionate B.Tech Computer Science & Engineering (AIML) student with expertise in <strong style={{ color: 'var(--text-primary)' }}>Computer Vision</strong>, <strong style={{ color: 'var(--text-primary)' }}>Speech Processing</strong>, and <strong style={{ color: 'var(--text-primary)' }}>NLP</strong>. Built autonomous AI platforms for state government bodies and telebanking security.
+            B.Tech Computer Science & Engineering (AIML) student with hands-on expertise in <strong style={{ color: 'var(--text-primary)' }}>Salesforce Development</strong> (Apex, LWC, Flows, SFDX), <strong style={{ color: 'var(--text-primary)' }}>Computer Vision</strong>, <strong style={{ color: 'var(--text-primary)' }}>Speech Processing</strong>, and <strong style={{ color: 'var(--text-primary)' }}>NLP</strong>. Proven experience delivering enterprise CRM automation at Andolgy Infotech and state government autonomous AI platforms at MRSAC.
           </p>
 
           {/* Contact Details Bar */}
@@ -76,6 +76,13 @@ export default function Hero() {
               <MapPin size={16} color="var(--primary-accent)" />
               <span>{personalInfo.location}</span>
             </div>
+            <a
+              href={`tel:${personalInfo.phone.replace(/[^0-9+]/g, '')}`}
+              style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', color: 'var(--text-secondary)', textDecoration: 'none' }}
+            >
+              <Phone size={16} color="var(--primary-accent)" />
+              <span>{personalInfo.phone}</span>
+            </a>
             <a
               href={`mailto:${personalInfo.email}`}
               style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', color: 'var(--text-secondary)', textDecoration: 'none' }}
@@ -100,6 +107,10 @@ export default function Hero() {
               <span>View Projects</span>
               <ArrowRight size={17} />
             </a>
+            <a href="#experience" className="btn btn-secondary">
+              <Cloud size={17} color="var(--primary-accent)" />
+              <span>Experience & Roles</span>
+            </a>
             <a
               href={personalInfo.linkedin}
               target="_blank"
@@ -116,7 +127,7 @@ export default function Hero() {
           <div className="grid-4">
             {personalInfo.stats.map((stat, idx) => (
               <div key={idx} className="card" style={{ padding: '1.25rem 1rem', textAlign: 'center' }}>
-                <div style={{ fontSize: '1.6rem', fontWeight: 700, color: 'var(--primary-accent)', marginBottom: '0.2rem' }}>
+                <div style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--primary-accent)', marginBottom: '0.2rem' }}>
                   {stat.value}
                 </div>
                 <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', fontWeight: 500 }}>

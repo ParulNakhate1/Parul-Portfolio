@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { projectsData } from '../data/portfolioData';
 import { FolderGit2, CheckCircle2, X, ChevronRight } from 'lucide-react';
+import { GitHubIcon } from './BrandIcons';
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -12,13 +13,13 @@ export default function Projects() {
         <div className="section-header">
           <div className="section-tag">
             <FolderGit2 size={15} />
-            <span>Academic Projects</span>
+            <span>Applied Engineering Projects</span>
           </div>
           <h2 className="section-title">
             Featured <span className="highlight-text">Projects</span>
           </h2>
           <p className="section-subtitle">
-            Hands-on AI systems created during my B.Tech studies with deep learning, NLP, and computer vision.
+            Core AI & software systems engineered with deep learning, speech biometrics, real-time computer vision, and NLP.
           </p>
         </div>
 
@@ -109,6 +110,19 @@ export default function Projects() {
                   <span>Project Overview</span>
                   <ChevronRight size={16} />
                 </button>
+                {project.id === 'traffic-detection' && (
+                  <a
+                    href="https://github.com/parulnakhate"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-secondary"
+                    style={{ padding: '0.55rem 0.9rem', fontSize: '0.88rem', display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}
+                    title="View on GitHub"
+                  >
+                    <GitHubIcon size={16} />
+                    <span>GitHub</span>
+                  </a>
+                )}
               </div>
 
             </div>
