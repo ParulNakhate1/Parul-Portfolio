@@ -4,7 +4,7 @@ export const personalInfo = {
   subTitle: "B.Tech in Computer Science & Engineering (AIML) • Salesforce Developer • AI/ML Engineer",
   location: "Nagpur, Maharashtra, India",
   phone: "+91-8010103217",
-  email: "parulnakhate22@gmail.com",
+  email: "parulnakhate01@gmail.com",
   linkedin: "https://www.linkedin.com/in/parul-nakhate-a70213323/",
   github: "https://github.com/parulnakhate",
   bio: "Passionate AI & Machine Learning Engineer and Salesforce Developer with hands-on expertise spanning Computer Vision, Natural Language Processing, Speech Processing, and Enterprise Salesforce Development (Apex, LWC, Aura, Flows). Proven experience delivering scalable Apex solutions at Andolgy Infotech, autonomous AI damage-detection platforms for state government bodies (MRSAC), conversational voice biometrics banking systems, and dynamic traffic optimization algorithms.",
